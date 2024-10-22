@@ -1,2 +1,2 @@
 # WinUI
-使用direct11进行界面绘制的测试项目
+使用win32以及direct进行简单绘制
