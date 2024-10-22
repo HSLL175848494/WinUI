@@ -1,0 +1,35 @@
+﻿  main.cpp
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\inc\WinGUI.h(82,22): warning C4091: “extern ”: 没有声明变量时忽略“HSLL::WinTask”的左侧
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(40,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(41,17): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(43,95): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(53,14): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(60,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(62,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(63,17): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(65,95): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(72,31): warning C4838: 从“double”转换到“float”需要收缩转换
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(72,31): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(72,70): warning C4838: 从“double”转换到“float”需要收缩转换
+C:\Users\Liu\source\repos\WinGUI\vs2022\WinGUI\main.cpp(72,70): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  libpng.lib(pngread.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+  正在生成代码
+  已完成代码的生成
+libpng.lib(pngread.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngread.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(png.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(png.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngrtran.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngrtran.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngtrans.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngtrans.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngrio.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngrio.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngerror.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngerror.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngget.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngget.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngrutil.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngrutil.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngmem.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngmem.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngset.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngset.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngwrite.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngwrite.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngwutil.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngwutil.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngwio.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngwio.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libpng.lib(pngwtran.obj) : warning LNK4099: 未找到 PDB“”(使用“libpng.lib(pngwtran.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+  WinGUI.vcxproj -> C:\Users\Liu\source\repos\WinGUI\vs2022\x64\Debug\WinGUI.exe
