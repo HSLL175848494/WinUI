@@ -273,6 +273,9 @@ LRESULT WINAPI HSLL::WinBase32::WinProc32(HWND hWnd, UINT Id, WPARAM wParam, LPA
 		bWin->SetState(8, 1);
 		bWin->SetState(5, 1);
 
+		if (bWin->CheckState(24))
+		ReleaseSemaphore(((WinMain32*)bWin)->hClose, 1, 0);
+
 		goto ProcSystem;
 	}
 
@@ -593,8 +596,7 @@ HSLL::WinMain32::WinMain32(DWORD Width, DWORD Height, float posX, float posY)//¸
 
 void HSLL::WinMain32::Release()//ÇëÔÚ´°¿ÚÍêÈ«¹Ø±Õºóµ÷ÓÃ¸Ãº¯Êý
 {
-	while (!CheckState(7) || !CheckState(6))
-		Sleep(1);
+	while (!CheckState(7) || !CheckState(6));
 
 	delete pDevice;
 	delete FramesPerSecond;
@@ -604,8 +606,8 @@ void HSLL::WinMain32::Release()//ÇëÔÚ´°¿ÚÍêÈ«¹Ø±Õºóµ÷ÓÃ¸Ãº¯Êý
 
 void HSLL::WinMain32::WaitForClose()
 {
-	while (!CheckState(8))
-		Sleep(1);
+	if(CheckState(25))
+	WaitForSingleObject(hClose, INFINITE);
 }
 
 
@@ -620,6 +622,7 @@ BOOL HSLL::WinMain32::CreateWindow32(WinMainStyle Style, WinProc Proc, LPCWSTR T
 	//¿ªÆôÏûÏ¢Ñ­»·Ïß³Ì
 	this->Proc = Proc;
 	InitializeCriticalSection(&CriticalSection);
+	hClose=CreateSemaphoreA(0, 0, 1, "Win_Close");
 	hMessageThread = CreateThread(0, 0, MessageThread, this, 0, 0);
 	SetThreadPriority(hMessageThread, THREAD_PRIORITY_ABOVE_NORMAL);
 
@@ -651,11 +654,9 @@ BOOL HSLL::WinMain32::CreateWindow32(WinMainStyle Style, WinProc Proc, LPCWSTR T
 
 	SetState(24, 1);
 
-	while (!PostThreadMessageA(GetThreadId(hMessageThread), WM_USER_WinCreate, (WPARAM)(&wcParam), 0))
-		Sleep(1);
+	while (!PostThreadMessageA(GetThreadId(hMessageThread), WM_USER_WinCreate, (WPARAM)(&wcParam), 0));
 
-	while (!CheckState(32))
-		Sleep(1);
+	while (!CheckState(32));
 
 	//´´½¨»æÍ¼Éè±¸
 	pDevice = new D3d11Render(hWnd, Width, Height);
@@ -860,11 +861,8 @@ BOOL HSLL::WinChild32::CreateWindow32(WinBase32* pParent, WinProc Proc)//´´½¨´°¿
 	wcParam.pWind = this;
 	wcParam.dwStyle |= WS_CHILD;
 
-	while (!PostThreadMessageA(GetThreadId(hMessageThread), WM_USER_WinCreate, (WPARAM)(&wcParam), 0))
-		Sleep(1);
-
-	while (!CheckState(32))
-		Sleep(1);
+	while (!PostThreadMessageA(GetThreadId(hMessageThread), WM_USER_WinCreate, (WPARAM)(&wcParam), 0));
+	while (!CheckState(32));
 
 	pParent->AddToChildList(this);
 	return true;
