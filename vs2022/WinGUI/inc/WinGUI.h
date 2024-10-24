@@ -93,8 +93,8 @@ namespace HSLL
 		HWND hWnd;//窗口句柄
 		DWORD State;//状态	
 		HCURSOR hCursor;//光标
-		WCHAR ClassName[20];//注册类名
 		HANDLE hMessageThread;//消息接收线程句柄
+		WCHAR ClassName[20];//注册类名
 		CRITICAL_SECTION CriticalSection;//临界区
 
 		WinTask* pTask;//绘制
@@ -168,12 +168,14 @@ namespace HSLL
 
 		float AspectRatio;//窗口比例
 		float StrechCenter;//拉伸中心点
+		HANDLE hClose;//窗口关闭信号
 		DWORD CornerRadius;//圆角半径
 		FloatRect DraggingArea;//拖拽响应区域
 
 		static DWORD WINAPI DrawThread(LPVOID pParam);//线程
 
 		BOOL DrawRgn();//绘制区域
+
 		void DrawTask(double Interval) override;//任务绘制
 
 	public:
